@@ -3,10 +3,11 @@ const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
-
+    const fs = require('fs');
     let buffer = null;
     before(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
+        // TODO: read './tests/test-bitmap.bmp' into buffer variable
+        buffer = fs.readFileSync('./tests/test-bitmap.bmp');
     });
 
     it('has correct specs', () => {
